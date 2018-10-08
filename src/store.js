@@ -1,16 +1,12 @@
-import { createStore, applyMiddleware } from 'redux'
-import rootReducer from '../reducers'
-import createSagaMiddleware, { END } from 'redux-saga'
-import logger from 'redux-logger'
+import { createStore, applyMiddleware } from 'redux';
+import rootReducer from '../reducers';
+import createSagaMiddleware, { END } from 'redux-saga';
+import logger from 'redux-logger';
 
 export class Store {
   static configureStore () {
-    let initialState;
+    const initialState = {};
     let store;
-
-    if (arguments.length > 0) {
-      initialState = Object.assign({}, ...arguments);
-    }
 
     const sagaMiddleware = createSagaMiddleware();
 
@@ -27,4 +23,4 @@ export class Store {
   }
 }
 
-export default Store
+export default Store;

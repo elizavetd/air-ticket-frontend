@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Flights from '../../components/Flights/Flights'
+import Flights from '../../components/Flights/Flights';
 
 export class FlightsContainer extends Component {
   render () {
@@ -10,16 +10,16 @@ export class FlightsContainer extends Component {
         user={this.props.user}
         flightActions={this.props.flightActions} 
       />
-    )
+    );
   }
 }
 
 function mapStateToProps (state) {
-  return {}
+  return {};
 }
 
 function mapDispatchToProps (dispatch) {
-  return {}
+  return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FlightsContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(FlightsContainer);

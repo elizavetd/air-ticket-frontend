@@ -1,10 +1,10 @@
-import {} from '../actions/airplanes'
+import {} from '../actions/airplanes';
 
-const initialState = {}
+const initialState = {};
 
 export default function airplaneState (state = initialState, action) {
   switch (action.type) {
     default:
-      return state
+      return state;
   }
 }

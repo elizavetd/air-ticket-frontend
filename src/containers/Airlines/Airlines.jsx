@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Airlines from '../../components/Airlines/Airlines'
+import Airlines from '../../components/Airlines/Airlines';
 
 export class AirlinesContainer extends Component {
   render () {
@@ -10,16 +10,16 @@ export class AirlinesContainer extends Component {
         airlines={this.props.airlines}
         airlineActions={this.props.airlineActions} 
       />
-    )
+    );
   }
 }
 
 function mapStateToProps (state) {
-  return {}
+  return {};
 }
 
 function mapDispatchToProps (dispatch) {
-  return {}
+  return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AirlinesContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(AirlinesContainer);

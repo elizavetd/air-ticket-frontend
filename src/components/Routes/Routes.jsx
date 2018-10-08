@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
-import Flights from '../../containers/Flights/Flights'
-import Airports from '../../containers/Airports/Airports'
-import Airplanes from '../../containers/Airplanes/Airplanes'
-import Airlines from '../../containers/Airlines/Airlines'
-import Account from '../../containers/Account/Account'
-import Auth from '../../containers/Auth/Auth'
+import Account from '../../containers/Account/Account';
+import Airlines from '../../containers/Airlines/Airlines';
+import Airplanes from '../../containers/Airplanes/Airplanes';
+import Airports from '../../containers/Airports/Airports';
+import Auth from '../../containers/Auth/Auth';
+import Flights from '../../containers/Flights/Flights';
 
 class Routes extends Component {
   render () {
@@ -19,8 +19,8 @@ class Routes extends Component {
         <Route path='/account' component={ Account } />
         <Route path='/auth' component={ Auth } />
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default Routes
+export default Routes;

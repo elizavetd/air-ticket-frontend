@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Account from '../../components/Account/Account'
+import Account from '../../components/Account/Account';
 
 export class AccountContainer extends Component {
   render () {
@@ -10,16 +10,16 @@ export class AccountContainer extends Component {
         user={this.props.user}
         accountActions={this.props.accountActions} 
       />
-    )
+    );
   }
 }
 
 function mapStateToProps (state) {
-  return {}
+  return {};
 }
 
 function mapDispatchToProps (dispatch) {
-  return {}
+  return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(AccountContainer);

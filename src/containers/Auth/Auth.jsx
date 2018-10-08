@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Auth from '../../components/Auth/Auth'
+import Auth from '../../components/Auth/Auth';
 
 export class AuthContainer extends Component {
   render () {
@@ -9,16 +9,16 @@ export class AuthContainer extends Component {
       <Auth
         authActions={this.props.authActions} 
       />
-    )
+    );
   }
 }
 
 function mapStateToProps (state) {
-  return {}
+  return {};
 }
 
 function mapDispatchToProps (dispatch) {
-  return {}
+  return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuthContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(AuthContainer);

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styles from './App.module.scss';
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div className={ styles.app }>
         <header className={ styles.header }>
@@ -12,9 +12,9 @@ class App extends Component {
           </p>
           <a
             className={ styles.link }
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://reactjs.org'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             Learn React
           </a>
