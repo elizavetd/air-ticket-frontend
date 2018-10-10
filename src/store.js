@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from '../reducers';
 import createSagaMiddleware, { END } from 'redux-saga';
 import logger from 'redux-logger';
+
+import rootReducer from './reducers';
 
 export class Store {
   static configureStore () {

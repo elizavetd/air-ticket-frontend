@@ -69,7 +69,7 @@
         "func-names": "off",
         "func-style": "off",
         "function-paren-newline": "error",
-        "generator-star-spacing": "error",
+        "generator-star-spacing": ["error", {"before": false, "after": true}],
         "getter-return": "error",
         "global-require": "off",
         "guard-for-in": "error",
