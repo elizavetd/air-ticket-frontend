@@ -7,6 +7,7 @@ import Store from './store';
 import rootSaga from './sagas';
 import App from './components/App/App';
 
+import './styles/my-bulma.scss';
 import './styles/index.scss';
 
 const store = Store.configureStore();

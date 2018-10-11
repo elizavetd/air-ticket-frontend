@@ -16,7 +16,7 @@ class Routes extends Component {
         <Route path='/airports' component={ Airports } />
         <Route path='/airplanes' component={ Airplanes } />
         <Route path='/airlines' component={ Airlines } />
-        <Route path='/account' component={ Account } />
+        <Route path='/my-account' component={ Account } />
         <Route path='/auth' component={ Auth } />
       </React.Fragment>
     );

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Account.module.scss';
+// import styles from './Account.module.scss';
 
 class Account extends Component {
   render () {
     return (
-      <div />
+      <div>Account</div>
     );
   }
 }

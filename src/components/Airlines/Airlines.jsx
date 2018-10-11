@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Airlines.module.scss';
+// import styles from './Airlines.module.scss';
 
 class Airlines extends Component {
   render () {
     return (
-      <div />
+      <div>Airlines</div>
     );
   }
 }

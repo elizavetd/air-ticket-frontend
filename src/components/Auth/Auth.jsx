@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Auth.module.scss';
+// import styles from './Auth.module.scss';
 
 class Auth extends Component {
   render () {
     return (
-      <div />
+      <div>Auth</div>
     );
   }
 }
