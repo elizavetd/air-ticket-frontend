@@ -9,10 +9,10 @@ import styles from './App.module.scss';
 class App extends Component {
   render () {
     return (
-      <div className={ classnames('columns', 'app', styles.app)}>
+      <div className={ classnames('columns', 'is-marginless', styles.app)}>
         <Menu />
 
-        <section className='column tile is-info'>
+        <section className='column'>
           <Routes />
         </section>
       </div>

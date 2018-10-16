@@ -2,7 +2,7 @@ import { call, put, takeLatest, all } from 'redux-saga/effects';
 import * as actions from '../actions/airports';
 import * as api from '../services/airportService';
 
-function* fetchAirports () {
+export function* fetchAirports () {
   try {
     const airports = yield call(api.getAirports);
 

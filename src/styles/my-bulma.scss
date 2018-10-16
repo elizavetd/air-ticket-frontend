@@ -10,12 +10,12 @@ $section-padding: 3rem 1.5rem !default;
 }
 
 // Menu
-$menu-item-color: $text !default;
-$menu-item-radius: $radius-small !default;
-$menu-item-hover-color: $text-strong !default;
-$menu-item-hover-background-color: $background !default;
-$menu-item-active-color: $link-invert !default;
-$menu-item-active-background-color: $link !default;
+$menu-item-color: $snow;
+$menu-item-radius: 0;
+$menu-item-hover-color: $pale-gold;
+$menu-item-hover-background-color: $myrtle;
+$menu-item-active-color: $snow;
+$menu-item-active-background-color: $pale-gold;
 
 $menu-list-border-left: 1px solid $border !default;
 
@@ -81,6 +81,17 @@ $menu-label-color: $text-light !default;
   &:not(:last-child) {
     margin-bottom: 1em;
   }
+}
+
+// Table
+
+$table-background-color: $snow;
+$table-striped-row-even-background-color: lighten($mauve, 43%);
+
+// Button
+
+.table .button.is-text {
+  text-decoration: none;
 }
 
 @import 'bulma';

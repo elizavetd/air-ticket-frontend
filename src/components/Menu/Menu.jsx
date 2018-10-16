@@ -16,9 +16,16 @@ const MENU_ITEMS = [
 
 class Menu extends Component {
   render () {
+    const menuContainerClasses = classnames(
+      'column',
+      'is-one-quarter',
+      'is-paddingless',
+      styles.menu_container
+    );
+
     return (
-      <aside className={ classnames('column', 'is-one-quarter', styles.menu_container) }>
-        <div className='menu'>
+      <aside className={ menuContainerClasses } >
+        <div className='menu is-medium'>
           <ul className='menu-list'>
             {MENU_ITEMS.map((menuItem, index) =>
               <li key={ index }>
