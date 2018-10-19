@@ -6,10 +6,11 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import Store from './store';
 import rootSaga from './sagas';
 import { initialization } from './actions/app';
-import App from './components/App/App';
 
 import './styles/my-bulma.scss';
 import './styles/index.scss';
+
+import App from './components/App/App';
 
 const store = Store.configureStore();
 store.runSaga(rootSaga);

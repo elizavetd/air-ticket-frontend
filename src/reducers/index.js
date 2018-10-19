@@ -6,6 +6,7 @@ import airlines from './airlines';
 import flights from './flights';
 import users from './users';
 import auth from './auth';
+import app from './app';
 
 export default combineReducers({
   airports,
@@ -13,5 +14,6 @@ export default combineReducers({
   airlines,
   flights,
   users,
-  auth
+  auth,
+  app
 });

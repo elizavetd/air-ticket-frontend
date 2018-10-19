@@ -11,7 +11,8 @@ export class AirportsContainer extends Component {
     return (
       <Airports
         airports={this.props.airports}
-        airportActions={this.props.airportActions} 
+        airportActions={this.props.airportActions}
+        countries={this.props.countries}
       />
     );
   }
@@ -19,7 +20,8 @@ export class AirportsContainer extends Component {
 
 function mapStateToProps (state) {
   return {
-    airports: state.airports
+    airports: state.airports,
+    countries: state.app.countries
   };
 }
 

@@ -12,4 +12,22 @@ export const getAirports = () =>
 
       return airports;
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      throw error;
+    });
+
+export const editAirport = (id, newAirport) =>
+  axios
+    .post(`/airports/${id}`, newAirport)
+    .then((response) => response.data)
+    .catch((error) => {
+      throw error;
+    });
+
+export const deleteAirport = (id) =>
+  axios
+    .delete(`/airports/${id}`)
+    .then((response) => response.data._id)
+    .catch((error) => {
+      throw error;
+    });

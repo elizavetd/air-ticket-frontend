@@ -7,7 +7,7 @@ import {
   DELETE_AIRPORT_SUCCESS,
   UPDATE_AIRPORT_REQUEST,
   UPDATE_AIRPORT_SUCCESS,
-  AIRPORT_FAILURE
+  AIRPORT_REQUEST_FAILURE
 } from '../actions/airports';
 
 const DEFAULT_STATE = {
@@ -58,7 +58,7 @@ export default function airportState (state = DEFAULT_STATE, action) {
       const itemsCopy = {};
 
       for (const id in state.items) {
-        if (id !== action.payload.airport.id) {
+        if (id !== action.payload.id) {
           itemsCopy[id] = state.items[id];
         }
       }
@@ -80,12 +80,12 @@ export default function airportState (state = DEFAULT_STATE, action) {
         ...state,
         items: {
           ...state.items,
-          [action.payload.airport.id]: action.payload.airport
+          [action.payload.airport._id]: action.payload.airport
         },
         saving: false
       };
     }
-    case AIRPORT_FAILURE: {
+    case AIRPORT_REQUEST_FAILURE: {
       return {
         ...state,
         loading: false,

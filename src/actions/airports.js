@@ -6,64 +6,65 @@ export const DELETE_AIRPORT_REQUEST = 'DELETE_AIRPORT_REQUEST';
 export const DELETE_AIRPORT_SUCCESS = 'DELETE_AIRPORT_SUCCESS';
 export const UPDATE_AIRPORT_REQUEST = 'UPDATE_AIRPORT_REQUEST';
 export const UPDATE_AIRPORT_SUCCESS = 'UPDATE_AIRPORT_SUCCESS';
-export const AIRPORT_FAILURE = 'AIRPORT_FAILURE';
+export const AIRPORT_REQUEST_FAILURE = 'AIRPORT_REQUEST_FAILURE';
 
 export const fetchAirportsRequest = () => ({
-    type: FETCH_AIRPORTS_REQUEST
+  type: FETCH_AIRPORTS_REQUEST
 });
 
 export const fetchAirportsSuccess = (airports) => ({
-    type: FETCH_AIRPORTS_SUCCESS,
-    payload: {
-      airports
-    }
+  type: FETCH_AIRPORTS_SUCCESS,
+  payload: {
+    airports
+  }
 });
 
 export const addAirportRequest = (airport) => ({
-    type: ADD_AIRPORT_REQUEST,
-    payload: {
-      airport
-    }
+  type: ADD_AIRPORT_REQUEST,
+  payload: {
+    airport
+  }
 });
 
 export const addAirportSuccess = (airport) => ({
-    type: ADD_AIRPORT_SUCCESS,
-    payload: {
-      airport
-    }
+  type: ADD_AIRPORT_SUCCESS,
+  payload: {
+    airport
+  }
 });
 
-export const deleteAirportRequest = (airport) => ({
-    type: DELETE_AIRPORT_REQUEST,
-    payload: {
-      airport
-    }
+export const deleteAirportRequest = (id) => ({
+  type: DELETE_AIRPORT_REQUEST,
+  payload: {
+    id
+  }
 });
 
-export const deleteAirportSuccess = (airport) => ({
-    type: DELETE_AIRPORT_SUCCESS,
-    payload: {
-      airport
-    }
+export const deleteAirportSuccess = (id) => ({
+  type: DELETE_AIRPORT_SUCCESS,
+  payload: {
+    id
+  }
 });
 
-export const updateAirportRequest = (airport) => ({
-    type: UPDATE_AIRPORT_REQUEST,
-    payload: {
-      airport
-    }
+export const updateAirportRequest = (id, newAirport) => ({
+  type: UPDATE_AIRPORT_REQUEST,
+  payload: {
+    id,
+    newAirport
+  }
 });
 
-export const updateAirportSuccess = (airport) => ({
-    type: UPDATE_AIRPORT_SUCCESS,
-    payload: {
-      airport
-    }
+export const updateAirportSuccess = (newAirport) => ({
+  type: UPDATE_AIRPORT_SUCCESS,
+  payload: {
+    airport: newAirport
+  }
 });
 
-export const airportFailure = (error) => ({
-    type: AIRPORT_FAILURE,
-    payload: {
-      error
-    }
+export const airportRequestFailure = (error) => ({
+  type: AIRPORT_REQUEST_FAILURE,
+  payload: {
+    error
+  }
 });
