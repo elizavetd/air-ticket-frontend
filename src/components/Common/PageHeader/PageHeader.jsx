@@ -5,15 +5,24 @@ import styles from './PageHeader.module.scss';
 
 class PageHeader extends Component {
   render () {
-    const { title } = this.props;
+    const {
+      title,
+      isButtonDisabled,
+      buttonAction
+    } = this.props;
 
     return (
       <div className={ `is-flex ${styles.header_container}` }>
         <div>
           <h1 className='title'>{ title }</h1>
         </div>
+
         <div>
-          <button className='button is-radiusless is-primary'>
+          <button
+            className='button is-radiusless is-primary'
+            disabled={ isButtonDisabled }
+            onClick={ buttonAction }
+          >
             <span className='icon'>
               <i className='fas fa-plus'></i>
             </span>
@@ -26,7 +35,9 @@ class PageHeader extends Component {
 }
 
 PageHeader.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string.isRequired,
+  isButtonDisabled: PropTypes.bool,
+  buttonAction: PropTypes.func
 };
 
 export default PageHeader;

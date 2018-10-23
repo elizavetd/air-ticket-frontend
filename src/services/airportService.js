@@ -16,6 +16,14 @@ export const getAirports = () =>
       throw error;
     });
 
+export const addAirport = (newAirport) =>
+  axios
+    .post('/airports', newAirport)
+    .then((response) => response.data)
+    .catch((error) => {
+      throw error;
+    });
+
 export const editAirport = (id, newAirport) =>
   axios
     .post(`/airports/${id}`, newAirport)

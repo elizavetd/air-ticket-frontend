@@ -43,7 +43,7 @@ export default function airportState (state = DEFAULT_STATE, action) {
         ...state,
         items: {
           ...state.items,
-          ...action.payload.airport
+          [action.payload.airport._id]: action.payload.airport
         },
         saving: false
       };

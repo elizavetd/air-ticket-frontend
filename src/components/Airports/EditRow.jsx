@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { find } from 'lodash';
+import { getCountryTimezones } from '../../helpers/airportHelpers';
 
 import styles from './Airports.module.scss';
-
-const UTF0 = '+00:00';
 
 class EditRow extends Component {
   constructor (props) {
@@ -31,6 +29,8 @@ class EditRow extends Component {
       countries,
       onEdit
     } = this.props;
+
+    const timezones = getCountryTimezones(countries, this.state.currentRow.country);
 
     return (
       <tr>
@@ -98,13 +98,9 @@ class EditRow extends Component {
               value={ this.state.currentRow.timezone }
               onChange={(event) => this.updateRowData({ timezone: event.currentTarget.value })}
             >
-              {find(countries, { name: this.state.currentRow.country }).timezones
-                .map((item, index) => {
-                  const timezone = item.replace('UTC', '') || UTF0;
-
-                  return <option key={ index } value={ timezone }>{ timezone }</option>;
-                })
-              }
+              {timezones.map((timezone, index) =>
+                <option key={ index } value={ timezone }>{ timezone }</option>
+              )}
             </select>
           </div>
         </td>
