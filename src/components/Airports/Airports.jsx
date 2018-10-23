@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoize-one';
+import { sortBy } from 'lodash';
 import { getCountryTimezones } from '../../helpers/airportHelpers';
 
 import PageHeader from '../Common/PageHeader/PageHeader';
@@ -205,7 +206,7 @@ class Airports extends Component {
 
         <Table
           headers={ TABLE_HEADERS }
-          items={ Object.values(airports.items) }
+          items={ sortBy(Object.values(airports.items), ['name']) }
           editButtons={ true }
           onDelete={ this.deleteAirport }
         >

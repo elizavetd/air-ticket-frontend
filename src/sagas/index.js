@@ -1,6 +1,6 @@
 import { fork, all } from 'redux-saga/effects';
 
-// import * as airlineSaga from './airlines';
+import airlineSagas from './airlines';
 // import airplaneSagas from './airplanes';
 import airportSagas from './airports';
 import app from './app';
@@ -10,7 +10,7 @@ import app from './app';
 
 export default function* rootSaga () {
   yield all([
-    // fork(airlineSaga),
+    fork(airlineSagas),
     // fork(airplaneSagas),
     fork(airportSagas),
     fork(app)

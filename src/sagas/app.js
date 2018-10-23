@@ -1,6 +1,7 @@
 import { takeEvery, all, call, put } from 'redux-saga/effects';
 import * as actions from '../actions/app';
 import { fetchAirports } from './airports';
+import { fetchAirlines } from './airlines';
 import * as api from '../services/appService';
 
 export function* getCountries () {
@@ -15,6 +16,7 @@ export function* getCountries () {
 
 export default function* root () {
   yield all([
+    takeEvery(actions.INITIALIZATION, fetchAirlines),
     takeEvery(actions.INITIALIZATION, fetchAirports),
     takeEvery(actions.INITIALIZATION, getCountries)
   ]);
