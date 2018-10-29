@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
 
 import styles from './Table.module.scss';
 
@@ -29,13 +30,20 @@ class Table extends Component {
     });
   }
 
-  getTableCell = (headers, row, column) =>
-    headers[column].reduce((accumulator, currentValue) => {
+  getTableCell = (headers, row, column) => {
+    if (this.props.specialColumns && this.props.specialColumns[column]) {
+      const renderSpecialCell = this.props.specialColumns[column];
+
+      return renderSpecialCell(row[headers[column]]);
+    }
+
+    return headers[column].reduce((accumulator, currentValue) => {
       const prevValue = accumulator === '' ? accumulator : `${accumulator}, `;
-      const nextValue = row[currentValue] || '';
+      const nextValue = get(row, currentValue) || '';
 
       return prevValue + nextValue;
-    }, '')
+    }, '');
+  }
 
   render () {
     const {
@@ -112,6 +120,7 @@ class Table extends Component {
 Table.propTypes = {
   headers: PropTypes.object.isRequired,
   items: PropTypes.array.isRequired,
+  specialColumns: PropTypes.object,
   editButtons: PropTypes.bool,
   onDelete: PropTypes.func
 };
