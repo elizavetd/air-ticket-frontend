@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import Menu from '../Menu/Menu';
+import Menu from '../../containers/Menu/Menu';
 import Routes from '../Routes/Routes';
 
 import styles from './App.module.scss';

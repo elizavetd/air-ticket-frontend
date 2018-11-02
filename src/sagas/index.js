@@ -4,7 +4,7 @@ import airlineSagas from './airlines';
 import airplaneSagas from './airplanes';
 import airportSagas from './airports';
 import app from './app';
-// import * as authSaga from './auth';
+import authSagas from './auth';
 // import * as flightSaga from './flights';
 // import * as userSaga from './users';
 
@@ -13,8 +13,8 @@ export default function* rootSaga () {
     fork(airlineSagas),
     fork(airplaneSagas),
     fork(airportSagas),
-    fork(app)
-    // fork(authSaga),
+    fork(app),
+    fork(authSagas)
     // fork(flightSaga),
     // fork(userSaga)
   ]);

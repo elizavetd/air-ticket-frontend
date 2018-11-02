@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 import * as authActions from '../../actions/auth';
 
-import Auth from '../../components/Auth/Auth';
+import Menu from '../../components/Menu/Menu';
 
-export class AuthContainer extends Component {
+export class MenuContainer extends Component {
   render () {
     return (
-      <Auth
+      <Menu
+        auth={this.props.auth}
         authActions={this.props.authActions}
       />
     );
@@ -17,7 +19,9 @@ export class AuthContainer extends Component {
 }
 
 function mapStateToProps (state) {
-  return {};
+  return {
+    auth: state.auth
+  };
 }
 
 function mapDispatchToProps (dispatch) {
@@ -26,4 +30,4 @@ function mapDispatchToProps (dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuthContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MenuContainer));

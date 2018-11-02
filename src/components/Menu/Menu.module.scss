@@ -3,3 +3,32 @@
 .menu_container {
   background-color: $myrtle;
 }
+
+.user_info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting {
+  color: $snow;
+  font-weight: bold;
+  margin: 20px 20px 0;
+  text-align: center;
+}
+
+.auth_buttons {
+  margin: 30px 20px 20px;
+  display: flex;
+  align-self: normal;
+}
+
+.login_button {
+  width: 100%;
+  margin-right: -1px;
+}
+
+.signup_button {
+  width: 100%;
+}

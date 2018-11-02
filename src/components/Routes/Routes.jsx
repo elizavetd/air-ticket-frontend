@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
 
 import Account from '../../containers/Account/Account';
 import Airlines from '../../containers/Airlines/Airlines';
@@ -16,7 +17,7 @@ class Routes extends Component {
         <Route path='/airports' component={ Airports } />
         <Route path='/airplanes' component={ Airplanes } />
         <Route path='/airlines' component={ Airlines } />
-        <Route path='/my-account' component={ Account } />
+        <PrivateRoute path='/my-account' component={ Account } />
         <Route path='/auth' component={ Auth } />
       </React.Fragment>
     );

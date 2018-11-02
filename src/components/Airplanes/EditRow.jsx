@@ -144,6 +144,16 @@ class EditRow extends Component {
         </td>
 
         <td>
+          <input
+            className={`input ${styles.basic_input}`}
+            type='text'
+            value={ this.state.currentRow.grossWeightKg }
+            placeholder='Gross Weight in Kg'
+            onChange={(event) => this.updateRowData({ grossWeightKg: event.currentTarget.value })}
+          />
+        </td>
+
+        <td>
           <button
             className='button is-small is-text'
             onClick={() => {
