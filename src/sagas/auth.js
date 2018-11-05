@@ -12,8 +12,19 @@ export function* login ({ payload: { email, password} }) {
   }
 }
 
+export function* signup ({ payload: { name, email, password} }) {
+  try {
+    const signedUser = yield call(api.signup, name, email, password);
+
+    yield put(actions.signupSuccess(signedUser));
+  } catch (error) {
+    yield put(actions.signupFailure(error));
+  }
+}
+
 export default function* root () {
   yield all([
-    takeLatest(actions.LOGIN_REQUEST, login)
+    takeLatest(actions.LOGIN_REQUEST, login),
+    takeLatest(actions.SIGNUP_REQUEST, signup)
   ]);
 }

@@ -7,7 +7,7 @@ import styles from './Menu.module.scss';
 
 const MENU_ITEMS = [
   // 'My account',
-  'My bookings',
+  // 'My bookings',
   'Airlines',
   'Airplanes',
   'Airports',

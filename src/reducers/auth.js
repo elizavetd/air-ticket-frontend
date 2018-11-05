@@ -2,6 +2,9 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  SIGNUP_REQUEST,
+  SIGNUP_SUCCESS,
+  SIGNUP_FAILURE,
   LOGOUT
 } from '../actions/auth';
 
@@ -33,6 +36,30 @@ export default function authState (state = initialState, action) {
       };
     }
     case LOGIN_FAILURE: {
+      return {
+        authorized: false,
+        user: null,
+        loggingIn: false,
+        error: action.payload.error
+      };
+    }
+    case SIGNUP_REQUEST: {
+      return {
+        authorized: false,
+        user: null,
+        loggingIn: true,
+        error: ''
+      };
+    }
+    case SIGNUP_SUCCESS: {
+      return {
+        authorized: true,
+        user: action.payload.userData,
+        loggingIn: true,
+        error: ''
+      };
+    }
+    case SIGNUP_FAILURE: {
       return {
         authorized: false,
         user: null,

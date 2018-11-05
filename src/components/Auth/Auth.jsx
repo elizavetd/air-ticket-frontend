@@ -45,7 +45,7 @@ class Auth extends Component {
 
   changeSignupData = (data) =>
     this.setState({
-      loginData: {
+      signupData: {
         ...this.state.signupData,
         ...data
       }
@@ -59,7 +59,10 @@ class Auth extends Component {
   }
 
   handleSignup = () => {
-    console.log('signup');
+    const { name, email, password } = this.state.signupData;
+
+    this.props.authActions.signupRequest(name, email, password);
+    this.props.history.push('/flights');
   }
 
   render () {
@@ -87,7 +90,13 @@ class Auth extends Component {
               <label className='label'>Name</label>
 
               <div className='control has-icons-left'>
-                <input className='input' type='text'/>
+                <input
+                  className='input'
+                  type='text'
+                  onChange={(event) => this.changeSignupData({
+                    name: event.currentTarget.value
+                  })}
+                />
                 <span className='icon is-small is-left'>
                   <i className='fas fa-user' />
                 </span>
@@ -98,7 +107,13 @@ class Auth extends Component {
               <label className='label'>Email</label>
 
               <div className='control has-icons-left'>
-                <input className='input' type='email'/>
+                <input
+                  className='input'
+                  type='email'
+                  onChange={(event) => this.changeSignupData({
+                    email: event.currentTarget.value
+                  })}
+                />
                 <span className='icon is-small is-left'>
                   <i className='fas fa-envelope' />
                 </span>
@@ -109,7 +124,13 @@ class Auth extends Component {
               <label className='label'>Password</label>
 
               <div className='control has-icons-left'>
-                <input className='input' type='password'/>
+                <input
+                  className='input'
+                  type='password'
+                  onChange={(event) => this.changeSignupData({
+                    password: event.currentTarget.value
+                  })}
+                />
                 <span className='icon is-small is-left'>
                   <i className='fas fa-lock' />
                 </span>
@@ -120,7 +141,13 @@ class Auth extends Component {
               <label className='label'>Confirm Password</label>
 
               <div className='control has-icons-left'>
-                <input className='input' type='password'/>
+                <input
+                  className='input'
+                  type='password'
+                  onChange={(event) => this.changeSignupData({
+                    confirmPassword: event.currentTarget.value
+                  })}
+                />
                 <span className='icon is-small is-left'>
                   <i className='fas fa-lock' />
                 </span>
